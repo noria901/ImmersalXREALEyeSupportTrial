@@ -1,0 +1,22 @@
+{
+    "name": "ImmersalXREALEye",
+    "rootNamespace": "ImmersalXREALEye",
+    "references": [
+        "Immersal.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.xreal.xr",
+            "expression": "",
+            "define": "XREAL_SDK_PRESENT"
+        }
+    ],
+    "noEngineReferences": false
+}
