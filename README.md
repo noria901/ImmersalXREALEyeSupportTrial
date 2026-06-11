@@ -24,16 +24,52 @@ docs/
 
 ## インストール(UPM)
 
-Unity の Package Manager > `+` > **Add package from git URL**:
+Unity 2022.3 以降。**依存パッケージ → 本体**の順で導入する。
+
+### 1. 依存パッケージを先に導入
+
+- **Immersal SDK 2.x**(`com.immersal.core` 2.3.0、Developer Portal から取得)
+- **XREAL SDK 3.1+**(`com.xreal.xr`、Camera Features サンプルを含む)
+
+XREAL SDK(`com.xreal.xr`)が存在すると asmdef の versionDefines により
+`XREAL_SDK_PRESENT` が自動定義される(パッケージ名が異なる場合は asmdef を修正)。
+
+### 2. 本パッケージを追加
+
+**方法A — Package Manager GUI**
+
+Window > Package Manager > `+` > **Add package from git URL** に以下を入力:
 
 ```
 https://github.com/noria901/ImmersalXREALEyeSupportTrial.git
 ```
 
-依存として **Immersal SDK 2.x**(`com.immersal.core`、Developer Portal から)と
-**XREAL SDK 3.1+**(Camera Features サンプル含む)を先に導入しておくこと。
-XREAL SDK(`com.xreal.xr`)が存在すると asmdef の versionDefines により
-`XREAL_SDK_PRESENT` が自動定義される(パッケージ名が異なる場合は asmdef を修正)。
+**方法B — manifest.json を直接編集**
+
+`Packages/manifest.json` の `dependencies` に1行追記:
+
+```json
+{
+  "dependencies": {
+    "com.noria901.immersal-xreal-eye": "https://github.com/noria901/ImmersalXREALEyeSupportTrial.git"
+  }
+}
+```
+
+### バージョン固定(任意)
+
+URL 末尾に `#<branch|tag|commit>` を付けると版を固定できる:
+
+```
+https://github.com/noria901/ImmersalXREALEyeSupportTrial.git#main
+```
+
+リリースタグは未作成のため、現状は `#main` かコミットSHAでの固定を推奨。
+
+### ローカル開発(クローンして手元で編集する場合)
+
+リポジトリをクローンし、Package Manager > `+` > **Add package from disk** で
+クローン先の `package.json` を指定する。git URL 経由と違いその場で編集・再コンパイルできる。
 
 ## セットアップ手順(想定)
 
