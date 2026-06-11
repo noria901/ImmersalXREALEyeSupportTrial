@@ -1,0 +1,13 @@
+{
+  "name": "com.noria901.immersal-xreal-eye",
+  "version": "0.1.0",
+  "displayName": "Immersal XREAL Eye Support (Trial)",
+  "description": "IPlatformSupport implementation feeding XREAL One + Eye RGB frames into the Immersal SDK localization pipeline. Untested scaffold based on code-level API audit.",
+  "unity": "2022.3",
+  "documentationUrl": "https://github.com/noria901/ImmersalXREALEyeSupportTrial",
+  "dependencies": {
+    "com.immersal.core": "2.3.0"
+  },
+  "keywords": ["xreal", "immersal", "vps", "localization", "ar"],
+  "author": { "name": "noria901", "url": "https://github.com/noria901" }
+}
